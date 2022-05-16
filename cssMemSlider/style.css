@@ -46,7 +46,7 @@ h3{
 .slider__items {
     display: flex;
     width: 1000px;
-    transition: all .6s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 .slider__items img {
@@ -125,7 +125,7 @@ h3{
     
     .slider__items img {
         width: 800px;
-        height: 400px;    
+        height: 500px;    
     }
     
     .slider__controls {
@@ -194,6 +194,7 @@ h3{
     
     .slider__items .slider__item img{
         width: 100%;
+        height: 80%;
     }
     
     #radio-1:checked ~ .slider__controls label[for="radio-1"] .circle,
@@ -243,16 +244,15 @@ h3{
         width: 100%;
     }
     
+    .slider__items img {
+        width: 100%;
+        height: 300px;    
+    }
+
     .slider__controls {
         position: relative;
         display: flex;
         justify-content: center;
         width: 100%;
     }
-
-    .slider__items img {
-        width: 100%;
-        height: 80%;    
-    }
-
 }
