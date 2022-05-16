@@ -7,18 +7,20 @@
 }
 
 body{
-    overflow: hidden;
+    overflow-x: hidden;
+    background-color: rgba(10, 10, 10, 0.9);
 }
 
 h3{
+    margin-top: 15px;
     font-size: 28px;
+    color: whitesmoke;
 }
 
 .container{
     width: 1280px;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
-    background-color: rgba(10, 10, 10, 0.741);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,6 +57,7 @@ h3{
 .slider__controls {
     position: relative;
     display: flex;
+    justify-content: center;
     width: 100%;
 }
 
@@ -106,26 +109,14 @@ h3{
 @media screen and (max-width: 1280px) {
     .container{
         width: 992px;
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .wrapper{
         width: 80%;
         margin: 0 auto;
     }
-    
-    .slider {
-        position: relative;
-    }
-    
-    .slider input[type=radio] {
-        display: none;
-    }
-    
-    .slider__wrapper {
-        overflow: hidden;
-    }
-    
+
     .slider__items {
         display: flex;
         width: 800px;
@@ -183,104 +174,28 @@ h3{
     
 }
 
-@media screen and(max-width: 992px) {
+
+@media screen and (max-width: 992px) {
     .container{
         width: 100%;
-        height: 100vh;
-        margin: 0 auto;
-    }
-
-    .slider {
-        position: relative;
-    }
-    
-    .slider input[type=radio] {
-        display: none;
-    }
-    
-    .slider__wrapper {
-        overflow: hidden;
-    }
-    
-    .slider__items {
-        display: flex;
-        width: 400%;
-        transition: all .6s ease-in-out;
-    }
-    
-    .slider__items img {
-        width: 100%;
-        height: 250px;    
-    }
-    
-    .slider__controls {
-        position: relative;
-        display: flex;
-        width: 100%;
-    }
-    
-    .slider__controls label {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: inherit;
-        cursor: pointer;   
-    }
-    
-    .slider__controls label:hover .circle{
-        background-color: aliceblue;
-    }
-    
-    #radio-1:checked ~ .slider__controls label[for="radio-1"] .circle,
-    #radio-2:checked ~ .slider__controls label[for="radio-2"] .circle,
-    #radio-3:checked ~ .slider__controls label[for="radio-3"] .circle,
-    #radio-4:checked ~ .slider__controls label[for="radio-4"] .circle{ 
-        background-color: inherit;
-    }
-    
-    #radio-1:checked ~ .slider__wrapper .slider__items{ 
-        transform: translate(0);
-    }
-    
-    #radio-2:checked ~ .slider__wrapper .slider__items { 
-        transform: translate(-23%);
-    }
-    
-    #radio-3:checked ~ .slider__wrapper .slider__items { 
-        transform: translate(-45%);
-    }
-    
-    #radio-4:checked ~ .slider__wrapper .slider__items { 
-        transform: translate(-72%);
-    }
-    
-}
-
-@media screen and (max-width: 768px) {
-    .container{
-        width: 100%;
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .slider__items {
         display: flex;
         width: 400%;
-        height: 16%;
         transition: all .8s ease-in-out;
     }
+
 
     .slider__items .slider__item{
         width: 100%;
     }
     
-    .slider__items img {
+    .slider__items .slider__item img{
         width: 100%;
-        height: 80%;    
     }
     
-
     #radio-1:checked ~ .slider__controls label[for="radio-1"] .circle,
     #radio-2:checked ~ .slider__controls label[for="radio-2"] .circle,
     #radio-3:checked ~ .slider__controls label[for="radio-3"] .circle,
@@ -303,6 +218,7 @@ h3{
     #radio-4:checked ~ .slider__wrapper .slider__items { 
         transform: translate(-75%);
     }
+
     
 }
 
@@ -332,6 +248,11 @@ h3{
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-top: 5px;
     }
+
+    .slider__items img {
+        width: 100%;
+        height: 80%;    
+    }
+
 }
