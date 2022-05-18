@@ -1,24 +1,17 @@
-*{
-    left: 0;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 body{
     overflow-x: hidden;
     background-color: rgba(10, 10, 10, 0.9);
 }
 
-h3{
-    margin-top: 15px;
-    font-size: 28px;
+h1{
+    margin: .6em 0;
     color: whitesmoke;
 }
 
 .container{
-    width: 1280px;
+    width: 100%;
     min-height: 100vh;
     margin: 0 auto;
     display: flex;
@@ -27,12 +20,9 @@ h3{
 }
 
 .wrapper{
-    width: 1000px;
+    width: 60vw;
+    height: 70vh;
     margin: 0 auto;
-}
-
-.slider {
-    position: relative;
 }
 
 .slider input[type=radio] {
@@ -45,25 +35,25 @@ h3{
 
 .slider__items {
     display: flex;
-    width: 1000px;
-    transition: all 1s ease-in-out;
+    width: 60vw;
+    height: 70vh;
+    transition: all 2s ease-in-out;
 }
 
 .slider__items img {
-    width: 1000px;
-    height: 600px;    
+    width: 60vw;
+    height: 60vh;    
 }
 
 .slider__controls {
-    position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
 .slider__controls label {
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,15 +62,12 @@ h3{
 }
 
 .slider__controls label .circle{
-    width: 30px;
-    height: 30px;
-    border: 4px solid rgb(81, 124, 217);
+    width: 1.7rem;
+    height: 1.7rem;
+    border: .3em solid rgb(81, 124, 217);
     background-color: rgb(81, 124, 217);
     border-radius: 50%;
-}
-
-.slider__controls label:hover .circle{
-    background-color: aliceblue;
+    transition: all .15s ease-in;
 }
 
 #radio-1:checked ~ .slider__controls label[for="radio-1"] .circle,
@@ -90,70 +77,70 @@ h3{
     background-color: inherit;
 }
 
+.slider__controls label:hover .circle{
+    background-color: aliceblue;
+}
+
+#radio-1:checked ~ .slider__controls label[for="radio-1"] .circle:hover,
+#radio-2:checked ~ .slider__controls label[for="radio-2"] .circle:hover,
+#radio-3:checked ~ .slider__controls label[for="radio-3"] .circle:hover,
+#radio-4:checked ~ .slider__controls label[for="radio-4"] .circle:hover{ 
+    background-color: aliceblue;
+}
+
+#radio-1:checked ~ .slider__controls label[for="radio-1"] .circle:active,
+#radio-2:checked ~ .slider__controls label[for="radio-2"] .circle:active,
+#radio-3:checked ~ .slider__controls label[for="radio-3"] .circle:active,
+#radio-4:checked ~ .slider__controls label[for="radio-4"] .circle:active{ 
+    opacity: .7;
+}
+
+.slider__controls label .circle:active{
+    opacity: .7;
+}
+
 #radio-1:checked ~ .slider__wrapper .slider__items{ 
     transform: translate(0);
 }
 
 #radio-2:checked ~ .slider__wrapper .slider__items { 
-    transform: translate(-1000px);
+    transform: translate(-60vw);
 }
 
 #radio-3:checked ~ .slider__wrapper .slider__items { 
-    transform: translate(-2000px);
+    transform: translate(-120vw);
 }
 
 #radio-4:checked ~ .slider__wrapper .slider__items { 
-    transform: translate(-3000px);
+    transform: translate(-180vw);
 }
 
 @media screen and (max-width: 1280px) {
     .container{
-        width: 992px;
-        min-height: 100vh;
+        width: 100%;
+        height: 100vh;
     }
 
     .wrapper{
         width: 80%;
+        height: 60vh;
         margin: 0 auto;
     }
 
     .slider__items {
         display: flex;
-        width: 800px;
-        transition: all .6s ease-in-out;
+        width: 80vw;
+        height: 60vh;
     }
     
     .slider__items img {
-        width: 800px;
-        height: 500px;    
+        width: 80vw;
+        height: 50vh;    
     }
     
     .slider__controls {
-        position: relative;
         display: flex;
         width: 100%;
-    }
-    
-    .slider__controls label {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: inherit;
-        cursor: pointer;   
-    }
-
-    
-    .slider__controls label:hover .circle{
-        background-color: aliceblue;
-    }
-    
-    #radio-1:checked ~ .slider__controls label[for="radio-1"] .circle,
-    #radio-2:checked ~ .slider__controls label[for="radio-2"] .circle,
-    #radio-3:checked ~ .slider__controls label[for="radio-3"] .circle,
-    #radio-4:checked ~ .slider__controls label[for="radio-4"] .circle{ 
-        background-color: inherit;
     }
     
     #radio-1:checked ~ .slider__wrapper .slider__items{ 
@@ -161,32 +148,30 @@ h3{
     }
     
     #radio-2:checked ~ .slider__wrapper .slider__items { 
-        transform: translate(-800px);
+        transform: translate(-80vw);
     }
     
     #radio-3:checked ~ .slider__wrapper .slider__items { 
-        transform: translate(-1600px);
+        transform: translate(-160vw);
     }
     
     #radio-4:checked ~ .slider__wrapper .slider__items { 
-        transform: translate(-2400px);
+        transform: translate(-240vw);
     }
     
 }
 
 
 @media screen and (max-width: 992px) {
-    .container{
-        width: 100%;
-        min-height: 100vh;
-    }
-
     .slider__items {
         display: flex;
         width: 400%;
-        transition: all .8s ease-in-out;
     }
-
+    .wrapper{
+        width: 80%;
+        height: 70vh;
+        margin: 0 auto;
+    }
 
     .slider__items .slider__item{
         width: 100%;
@@ -195,13 +180,6 @@ h3{
     .slider__items .slider__item img{
         width: 100%;
         height: 80%;
-    }
-    
-    #radio-1:checked ~ .slider__controls label[for="radio-1"] .circle,
-    #radio-2:checked ~ .slider__controls label[for="radio-2"] .circle,
-    #radio-3:checked ~ .slider__controls label[for="radio-3"] .circle,
-    #radio-4:checked ~ .slider__controls label[for="radio-4"] .circle{ 
-        background-color: inherit;
     }
     
     #radio-1:checked ~ .slider__wrapper .slider__items{ 
@@ -227,17 +205,16 @@ h3{
     .wrapper{
         width: 90%;
         margin: 0 auto;
+        height: 70vh;
     }
 
-    h3{
+    h1{
         text-align: center;
     }
 
     .slider__items {
         display: flex;
         width: 400%;
-        height: 300px;
-        transition: all .8s ease-in-out;
     }
 
     .slider__items .slider__item{
@@ -246,11 +223,9 @@ h3{
     
     .slider__items img {
         width: 100%;
-        height: 300px;    
     }
 
     .slider__controls {
-        position: relative;
         display: flex;
         justify-content: center;
         width: 100%;
